@@ -1,0 +1,130 @@
+.memufi-field {
+    display: block;
+    font-size: 16px;
+}
+
+.memufi-field__input {
+    --field-input-select-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    display: block;
+    width: 100%;
+    padding: 5px 11px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(var(--memufi-app-color));
+    appearance: none;
+    background-color: rgb(var(--memufi-app-background-color));
+    background-clip: padding-box;
+    border: 1px solid rgba(var(--memufi-app-color), 0.2);
+    border-radius: 5px;
+    outline: none;
+}
+
+.memufi-field__input[type="range"] {
+    height: 3px;
+    padding: 0;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.memufi-field__input::-webkit-outer-spin-button,
+.memufi-field__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.memufi-field__input[type=number] {
+    -moz-appearance: textfield;
+}
+
+select.memufi-field__input {
+    width: fit-content;
+}
+
+input.memufi-field__input:read-only, input.memufi-field__input:disabled,
+select.memufi-field__input:disabled {
+    background-color: rgba(var(--memufi-app-color), 0.1);
+}
+
+select.memufi-field__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: var(--field-input-select-icon);
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 16px 12px;
+    padding-right: 24px;
+}
+
+.memufi-field__input[type="range"]:disabled {
+    opacity: 0.5;
+}
+
+input.memufi-field__input[type="file"], input.memufi-field__input[type="file"]:read-only, input.memufi-field__input[type="file"]:disabled {
+    background: transparent;
+    display: inline-block;
+    width: fit-content;
+    border: none;
+}
+
+.memufi-field__input::file-selector-button {
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+input.memufi-field__input:read-only:focus, input.memufi-field__input:disabled:focus {
+    box-shadow: none;
+}
+
+.memufi-field__label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.memufi-field__text {
+
+}
+
+.memufi-success.memufi-field .memufi-field__text, .memufi-success.memufi-field .memufi-field__label {
+    color: rgb(var(--memufi-app-success-color));
+}
+
+.memufi-success.memufi-field .memufi-field__input {
+    border-color: rgb(var(--memufi-app-success-color));
+}
+
+.memufi-success.memufi-field > .memufi-field__input:focus {
+    --memufi-app-focus-box-shadow: 0 0 0 2px rgba(var(--memufi-app-success-color), 0.5);
+}
+
+.memufi-success.memufi-field .memufi-field__input[type="range"] {
+    color: rgb(var(--memufi-app-success-color));
+    background-color: rgb(var(--memufi-app-success-color));
+}
+
+.memufi-danger.memufi-field .memufi-field__text, .memufi-danger.memufi-field .memufi-field__label {
+    color: rgb(var(--memufi-app-danger-color));
+}
+
+.memufi-danger.memufi-field .memufi-field__input {
+    border-color: rgb(var(--memufi-app-danger-color));
+}
+
+.memufi-danger.memufi-field > .memufi-field__input:focus {
+    --memufi-app-focus-box-shadow: 0 0 0 2px rgba(var(--memufi-app-danger-color), 0.5);
+}
+
+.memufi-danger.memufi-field .memufi-field__input[type="range"] {
+    color: rgb(var(--memufi-app-danger-color));
+    background-color: rgb(var(--memufi-app-danger-color));
+}

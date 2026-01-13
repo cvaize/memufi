@@ -1,0 +1,197 @@
+:root {
+    --memufi-app-accent-color: 0, 0, 255;
+    --memufi-app-mark-bg-color: 255, 255, 0;
+    --memufi-app-color: 59, 67, 81;
+    --memufi-app-background-color: 255, 255, 255;
+    --memufi-app-backdrop-color: 0, 0, 0;
+    --memufi-app-light-background-color: 225, 225, 225;
+    --memufi-app-success-color: 30, 180, 20;
+    --memufi-app-danger-color: 220, 53, 69;
+    --memufi-app-warning-color: 215, 215, 0;
+    --memufi-app-focus-box-shadow: 0 0 0 2px rgba(var(--memufi-app-accent-color), 0.5);
+}
+
+::selection {
+    background-color: rgba(var(--memufi-app-accent-color), 0.2);
+}
+
+mark {
+    background-color: rgb(var(--memufi-app-mark-bg-color));
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+*[class*="memufi-"]:focus {
+    box-shadow: var(--memufi-app-focus-box-shadow);
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 16px 0;
+}
+
+[type="button"], [type="reset"], [type="submit"], button {
+    -webkit-appearance: button;
+}
+
+button, select {
+    text-transform: none;
+}
+
+.memufi-html {
+    line-height: 1.5;
+}
+
+.memufi-body {
+    color: rgb(var(--memufi-app-color));
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+
+.memufi-app {
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    color: rgb(var(--memufi-app-color));
+    background: rgb(var(--memufi-app-background-color));
+}
+
+.memufi-content {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.memufi-hr {
+    opacity: 0.1;
+    margin: 8px 0;
+}
+
+.memufi-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.memufi-icon--svg {
+    width: 1.2em;
+    min-width: 1.2em;
+    height: 1.2em;
+    min-height: 1.2em;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.memufi-text--mini {
+    font-size: .875em;
+    opacity: 0.8;
+}
+
+.memufi-text--accent {
+    color: rgb(var(--memufi-app-accent-color));
+}
+
+.memufi-text--success {
+    color: rgb(var(--memufi-app-success-color));
+}
+
+.memufi-text--warning {
+    color: rgb(var(--memufi-app-warning-color));
+}
+
+.memufi-text--danger {
+    color: rgb(var(--memufi-app-danger-color));
+}
+
+.memufi-backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 180;
+    background: rgba(var(--memufi-app-backdrop-color), 0.6);
+    display: none;
+}
+
+.memufi-container {
+    width: 100%;
+    max-width: 1460px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.memufi-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.memufi-col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.memufi-col {
+    flex: 1 0 0;
+    width: auto;
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.memufi-hidden {
+    display: none;
+}
+
+.memufi-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+@media (max-width: 1460px) {
+    .memufi-container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .memufi-container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .memufi-container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 991px) {
+    .memufi-container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 767px) {
+    .memufi-container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 470px) {
+    .memufi-container {
+        max-width: none;
+    }
+}

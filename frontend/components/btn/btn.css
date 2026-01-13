@@ -1,0 +1,199 @@
+.memufi-btn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 11px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    color: rgb(var(--memufi-app-background-color));
+    background-color: rgb(var(--memufi-app-color));
+    border: 1px solid rgb(var(--memufi-app-color));
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+}
+
+.memufi-btn:hover {
+    background-color: rgba(var(--memufi-app-color), 0.9);
+    border-color: rgba(var(--memufi-app-color), 0.9);
+}
+
+.memufi-btn:active {
+    background-color: rgba(var(--memufi-app-color), 0.8);
+    border-color: rgba(var(--memufi-app-color), 0.8);
+}
+
+.memufi-btn:focus {
+    box-shadow: 0 0 0 2px rgba(var(--memufi-app-color), 0.5);
+}
+
+.memufi-btn.memufi-accent {
+    background-color: rgb(var(--memufi-app-accent-color));
+    border-color: rgb(var(--memufi-app-accent-color));
+}
+
+.memufi-btn.memufi-accent:hover {
+    background-color: rgba(var(--memufi-app-accent-color), 0.9);
+    border-color: rgba(var(--memufi-app-accent-color), 0.9);
+}
+
+.memufi-btn.memufi-accent:active {
+    background-color: rgba(var(--memufi-app-accent-color), 0.8);
+    border-color: rgba(var(--memufi-app-accent-color), 0.8);
+}
+
+.memufi-btn.memufi-accent:focus {
+    box-shadow: 0 0 0 2px rgba(var(--memufi-app-accent-color), 0.5);
+}
+
+.memufi-btn.memufi-success {
+    background-color: rgb(var(--memufi-app-success-color));
+    border-color: rgb(var(--memufi-app-success-color));
+}
+
+.memufi-btn.memufi-success:hover {
+    background-color: rgba(var(--memufi-app-success-color), 0.9);
+    border-color: rgba(var(--memufi-app-success-color), 0.9);
+}
+
+.memufi-btn.memufi-success:active {
+    background-color: rgba(var(--memufi-app-success-color), 0.8);
+    border-color: rgba(var(--memufi-app-success-color), 0.8);
+}
+
+.memufi-btn.memufi-success:focus {
+    box-shadow: 0 0 0 2px rgba(var(--memufi-app-success-color), 0.5);
+}
+
+.memufi-btn.memufi-danger {
+    background-color: rgb(var(--memufi-app-danger-color));
+    border-color: rgb(var(--memufi-app-danger-color));
+}
+
+.memufi-btn.memufi-danger:hover {
+    background-color: rgba(var(--memufi-app-danger-color), 0.9);
+    border-color: rgba(var(--memufi-app-danger-color), 0.9);
+}
+
+.memufi-btn.memufi-danger:active {
+    background-color: rgba(var(--memufi-app-danger-color), 0.8);
+    border-color: rgba(var(--memufi-app-danger-color), 0.8);
+}
+
+.memufi-btn.memufi-danger:focus {
+    box-shadow: 0 0 0 2px rgba(var(--memufi-app-danger-color), 0.5);
+}
+
+.memufi-btn.memufi-warning {
+    background-color: rgb(var(--memufi-app-warning-color));
+    border-color: rgb(var(--memufi-app-warning-color));
+}
+
+.memufi-btn.memufi-warning:hover {
+    background-color: rgba(var(--memufi-app-warning-color), 0.9);
+    border-color: rgba(var(--memufi-app-warning-color), 0.9);
+}
+
+.memufi-btn.memufi-warning:active {
+    background-color: rgba(var(--memufi-app-warning-color), 0.8);
+    border-color: rgba(var(--memufi-app-warning-color), 0.8);
+}
+
+.memufi-btn.memufi-warning:focus {
+    box-shadow: 0 0 0 2px rgba(var(--memufi-app-warning-color), 0.5);
+}
+
+
+.memufi-btn.memufi-btn--link {
+    color: rgb(var(--memufi-app-color));
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.memufi-btn.memufi-btn--link:hover, .memufi-btn.memufi-btn--link:active {
+    background-color: transparent;
+    opacity: 0.8;
+}
+
+.memufi-btn--square {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.memufi-btn .memufi-icon--svg{
+    margin-top: -16px;
+    margin-bottom: -12px;
+}
+
+.memufi-btn--outline {
+    background-color: rgb(var(--memufi-app-background-color));
+    border-color: rgba(var(--memufi-app-color), 0.5);
+}
+
+.memufi-btn--outline.memufi-active {
+    background-color: rgb(var(--memufi-app-light-background-color));
+    border-color: rgb(var(--memufi-app-light-background-color));
+}
+
+.memufi-btn:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.memufi-btn.memufi-loading {
+    pointer-events: none;
+    user-select: none;
+}
+
+.memufi-btn.memufi-loading * {
+    pointer-events: none;
+    user-select: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.memufi-btn.memufi-loading:not(.memufi-btn--square) > .memufi-icon--svg:first-child {
+    display: none;
+}
+
+.memufi-btn.memufi-loading::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: -3px 3px -3px 0;
+    border: 4px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: memufi-button-loading-spinner 1s ease infinite;
+}
+
+.memufi-btn.memufi-btn--square.memufi-loading::before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+@keyframes memufi-button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

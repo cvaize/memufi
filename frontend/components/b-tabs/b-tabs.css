@@ -1,0 +1,88 @@
+.memufi-b-tabs {
+    display: block;
+}
+
+.memufi-b-tabs__nav {
+    display: flex;
+}
+
+.memufi-b-tabs__link {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 2px 16px;
+    font-weight: 400;
+    background: rgba(var(--memufi-app-light-background-color));
+    z-index: 1;
+    user-select: none;
+}
+
+.memufi-b-tabs__link:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    border-radius: 6px;
+    z-index: -1;
+}
+
+.memufi-b-tabs__content {
+    display: block;
+}
+
+.memufi-b-tabs__pane {
+    display: none;
+}
+
+.memufi-b-tabs__link:first-child, .memufi-b-tabs__link + .memufi-b-tabs__link:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    right: 0;
+}
+
+.memufi-b-tabs__link + .memufi-b-tabs__link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 0;
+}
+
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(1):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(1):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(2):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(2):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(3):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(3):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(4):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(4):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(5):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(5):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(6):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(6):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(7):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(7):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(8):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(8):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(9):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(9):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(10):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(10):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(11):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(11):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(12):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(12):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(13):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(13):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(14):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(14):before,
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(15):checked ~ .memufi-b-tabs__nav > .memufi-b-tabs__link:nth-child(15):before {
+    background: rgba(var(--memufi-app-background-color));
+}
+
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(1):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(1),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(2):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(2),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(3):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(3),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(4):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(4),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(5):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(5),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(6):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(6),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(7):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(7),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(8):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(8),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(9):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(9),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(10):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(10),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(11):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(11),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(12):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(12),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(13):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(13),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(14):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(14),
+.memufi-b-tabs > .memufi-b-tabs__checkbox:nth-child(15):checked ~ .memufi-b-tabs__content > .memufi-b-tabs__pane:nth-child(15) {
+    display: block;
+}

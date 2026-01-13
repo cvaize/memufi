@@ -1,0 +1,31 @@
+.memufi-treejs .treejs-nodes {
+    margin: 0;
+}
+
+.memufi-treejs .treejs-nodes:first-child{
+    padding-left: 0;
+}
+
+.memufi-treejs .treejs-node {
+    position: relative;
+    z-index: 1;
+}
+
+.memufi-treejs .treejs-label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: transparent;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.memufi-treejs .treejs-switcher:hover ~ .treejs-label:before,
+.memufi-treejs .treejs-checkbox:hover ~ .treejs-label:before,
+.memufi-treejs .treejs-label:hover:before {
+    background-color: rgba(var(--memufi-app-color), 0.1);
+}
