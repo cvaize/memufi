@@ -1,8 +1,5 @@
 # MeMuFi
 
-## Attention! There are bugs
-1. In some large repositories, files are added twice.
-
 **Version:** 0.1.0
 
 MeMuFi is a cross-platform GUI application for merging multiple files and directories into a single text file, optimized for use with Large Language Models (LLMs).

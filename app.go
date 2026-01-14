@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"github.com/davecgh/go-spew/spew"
 	"github.com/labstack/gommon/log"
 	"io/fs"
 	"os"
@@ -75,6 +76,10 @@ func (a *App) GetDirectoryTree(root string) DirectoryTreeResponse {
 
 // Generate combines files into one.
 func (a *App) Generate(root, output string, include, exclude []string) string {
+	spew.Dump("root", root)
+	spew.Dump("output", output)
+	spew.Dump("include", include)
+	spew.Dump("exclude", exclude)
 	root = filepath.Clean(root)
 
 	var treeLines []string

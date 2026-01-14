@@ -218,6 +218,12 @@
     }
 
     function refreshRoot() {
+        root = root.trim();
+        if (!root.endsWith(separator)) {
+            root += separator;
+        }
+        rootInput.value = root;
+
         addLoading(refreshBtn);
         disableInputs();
         if (isGo()) {
