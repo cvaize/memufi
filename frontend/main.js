@@ -310,6 +310,9 @@
                 return new Promise(function (resolve) {
                         if (isGo()) {
                             GetDirectoryTree(id).then(function (t) {
+                                if (!t || !t.length) {
+                                    resolve([]);
+                                }
                                 let _values = [];
                                 /** @var {string[]} */
                                 let _items = t;
@@ -481,7 +484,11 @@
                 if (tree.Error) {
                     reject(tree.Error);
                 } else {
-                    resolve(tree.Items);
+                    if (tree.Items) {
+                        resolve(tree.Items);
+                    } else {
+                        resolve([]);
+                    }
                 }
             }).catch(function () {
                 reject("An error occurred while retrieving the directory tree.");

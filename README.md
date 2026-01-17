@@ -80,7 +80,7 @@ FILE: project/file1.go
 
 ## Project Status
 
-Version **0.1.0** is an initial release. The API and functionality may change in future versions.
+Version **0.1.1** is an initial release. The API and functionality may change in future versions.
 
 ## License
 

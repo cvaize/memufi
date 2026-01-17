@@ -223,16 +223,37 @@
     };
 
     Tree.prototype.setChildren = function (rootId, children) {
-        let children_ = []
+        let children_ = [];
         for (let i = 0; i < children.length; i++) {
             if (!this.nodesById[children[i].id]) {
                 children_.push(children[i]);
             }
         }
-        children = children_
+        children = children_;
         if (children.length === 0) {
+            if (this.nodesById[rootId] && this.nodesById[rootId].children && this.nodesById[rootId].children.length === 0) {
+                delete this.nodesById[rootId].children;
+            }
+            if (this.leafNodesById[rootId] && this.leafNodesById[rootId].children && this.leafNodesById[rootId].children.length === 0) {
+                delete this.nodesById[rootId].children;
+            }
+            let switchElem = this.liElementsById[rootId];
+            if (switchElem) {
+                let rmEl;
+                for (let i = 0; i < switchElem.childNodes.length; i++) {
+                    if(switchElem.childNodes[i].classList.contains("treejs-switcher")){
+                        rmEl = switchElem.childNodes[i];
+                    }
+                }
+                if (rmEl) rmEl.remove();
+
+                if (!switchElem.classList.contains("treejs-placeholder")) {
+                    switchElem.classList.add("treejs-placeholder");
+                }
+            }
             return;
         }
+
         let parentNode = this.nodesById[rootId];
         if (!parentNode) return;
 
