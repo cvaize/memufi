@@ -24,14 +24,9 @@ The application allows you to select files and folders, apply include and exclud
 
 ## Build Instructions via Docker the Application
 
-Ubuntu 24.04
+Ubuntu 24.04 and later
 ```bash
-docker compose run --rm ubuntu2404 linux -o memufi-ubuntu2404-amd64.run
-```
-
-Ubuntu 25.04
-```bash
-docker compose run --rm ubuntu2504 linux -tags webkit2_41 -o memufi-ubuntu2504-amd64.run
+docker compose run --rm ubuntu linux -o memufi-ubuntu-amd64.run
 ```
 
 Windows
