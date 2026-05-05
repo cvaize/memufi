@@ -1,6 +1,6 @@
 # MeMuFi
 
-**Version:** 1.0
+**Version:** 0.1.1
 
 MeMuFi is a cross-platform GUI application for merging multiple files and directories into a single text file, optimized for use with Large Language Models (LLMs).
 
@@ -41,7 +41,15 @@ wails build
 ### Build the Linux Application
 
 ```bash
-wails build -tags webkit2_41
+wails build -platform linux/amd64 -tags webkit2_41
+```
+
+```bash
+wails build -platform windows/amd64 -tags webkit2_41
+```
+
+```bash
+wails build -platform darwin/universal -tags webkit2_41
 ```
 
 The resulting binary will be located in:
