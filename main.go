@@ -18,7 +18,9 @@ func main() {
 	// Create application with options
 	err := wails.Run(&options.App{
 		Title:            "Merging multiple files into a single file for an LLM",
-		Fullscreen:       true,
+		Fullscreen:       false,
+		StartHidden:      false,
+		Frameless:        false,
 		Width:            1024,
 		Height:           768,
 		MinWidth:         500,
