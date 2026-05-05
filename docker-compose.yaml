@@ -1,0 +1,19 @@
+services:
+  ubuntu2404:
+    build:
+      context: ./
+      dockerfile: ./build/wails-cross-compile/Dockerfile
+    volumes:
+      - './:/app'
+  ubuntu2504:
+    build:
+      context: ./
+      dockerfile: ./build/wails-cross-compile/ubuntu2504/Dockerfile
+    volumes:
+      - './:/app'
+  windows:
+    build:
+      context: ./
+      dockerfile: ./build/wails-cross-compile/Dockerfile
+    volumes:
+      - './:/app'

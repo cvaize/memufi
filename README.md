@@ -22,34 +22,21 @@ The application allows you to select files and folders, apply include and exclud
 * **Wails** — desktop GUI framework and build system
 * **HTML / CSS / JavaScript** — frontend
 
-## Build Instructions
+## Build Instructions via Docker the Application
 
-To build the application, you need **Go** and **Wails** installed.
-
-### Install Wails
-
+Ubuntu 24.04
 ```bash
-go install github.com/wailsapp/wails/v2/cmd/wails@latest
+docker compose run --rm ubuntu2404 linux -o memufi-ubuntu2404-amd64.run
 ```
 
-### Build the Application
-
+Ubuntu 25.04
 ```bash
-wails build
+docker compose run --rm ubuntu2504 linux -tags webkit2_41 -o memufi-ubuntu2504-amd64.run
 ```
 
-### Build the Linux Application
-
+Windows
 ```bash
-wails build -platform linux/amd64 -tags webkit2_41
-```
-
-```bash
-wails build -platform windows/amd64 -tags webkit2_41
-```
-
-```bash
-wails build -platform darwin/universal -tags webkit2_41
+docker compose run --rm windows windows -nsis -upx -o memufi-amd64.exe
 ```
 
 The resulting binary will be located in:
