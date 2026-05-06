@@ -14,7 +14,7 @@ The application allows you to select files and folders, apply include and exclud
 * 🧾 Generate a textual project structure
 * 📦 Merge file contents into a single output file
 * 🚫 Automatic detection of binary files
-* 🖥️ Cross-platform support (Windows, macOS, Linux)
+* 🖥️ Cross-platform support (Windows, ~~macOS~~, Linux)
 
 ## Tech Stack
 
