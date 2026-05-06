@@ -18,14 +18,16 @@
     let treeViewEl = document.getElementById("tree-view");
 
 
+    let isShowExample = false
+    let windowsSeparator = '\\'
     let defaultSeparator = '/';
     let defaultRoot = '/home/';
     let defaultOutput = '/home/code_for_llm.txt';
     let defaultExcluded = [
-        '*.exe', '*.exe~', '*.dll', '*.so', '*.dylib', '*.test', '*.out', 'coverage.*', '*.coverprofile',
+        'code_for_llm.txt', '*.exe', '*.exe~', '*.dll', '*.so', '*.dylib', '*.test', '*.out', 'coverage.*', '*.coverprofile',
         'profile.cov', '.env', '.git/', '.idea/', '.vscode/', 'node_modules/', 'vendor/', 'go.work', 'go.work.sum'
     ];
-    let defaultTreeChildren = [
+    let exampleTreeChildren = [
         {
             "id": "/home/user_folder1/",
             "text": "user_folder1/",
@@ -93,7 +95,7 @@
         { "id": "/home/file.exe", "text": "file.exe" }
     ];
 
-    let separator = '';
+    let separator = defaultSeparator;
     let root = "";
     let output = "";
     /** @var {string[]} **/
@@ -174,12 +176,13 @@
         separator = defaultSeparator;
         rootInput.value = root;
         outputInput.value = output;
-        treeChildren = defaultTreeChildren;
+        treeChildren = exampleTreeChildren;
         addLoading(refreshBtn);
         disableInputs();
         if (isGo()) {
             GetSeparator().then(function (s) {
                 separator = s
+                ifWindowsChangeDefaultVariablesForWindowsAfterInit()
                 GetPwd().then(function (p) {
                     /** @var {string} */
                     let _pwd = p;
@@ -338,7 +341,7 @@
                                     let j = Math.round(Math.random() * 10);
                                     if (!_index[j]) {
                                         _index[j] = true;
-                                        _values.push({ "id": id + "subDir"+j+"/", "text": "subDir"+j+"/", "children": [] });
+                                        _values.push({ "id": id + "subDir"+j+separator, "text": "subDir"+j+separator, "children": [] });
                                     }
                                 }
 
@@ -396,10 +399,16 @@
         return [...onlyIn1, ...onlyIn2];
     }
 
+    function escapeRegExp (string){
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     function filterPaths(paths, patterns) {
+        let safeSeparator = escapeRegExp(separator)
+        console.log(safeSeparator)
         // 1. Предварительно компилируем паттерны в Regex для скорости
         const rules = patterns.map(p => {
-            const isDirRule = p.endsWith('/');
+            const isDirRule = p.endsWith(separator);
             // Убираем слеш в конце для обработки
             const raw = isDirRule ? p.slice(0, -1) : p;
 
@@ -416,7 +425,8 @@
                 // (/|$) означает слеш или конец строки
                 return {
                     type: 'dir',
-                    regexp: new RegExp(`(^|/)${regexStr}(/|$)`)
+                    regexp: new RegExp(`(^|${safeSeparator})${regexStr}(${safeSeparator}|$)`)
+                    // regexp: new RegExp('(^|' + escapeRegExp(separator) + ')'+regexStr+'('+escapeRegExp(separator)+'|$)')
                 };
             } else {
                 // Если правило для файла, оно должно полностью совпадать с именем файла
@@ -430,11 +440,11 @@
         // 2. Фильтруем массив values
         return paths.filter(path => {
             // Определяем, является ли путь папкой
-            const isPathDir = path.endsWith('/');
+            const isPathDir = path.endsWith(separator);
 
             // Получаем имя файла (последний сегмент пути)
             // Если путь заканчивается на /, split даст пустую строку в конце, фильтруем это
-            const segments = path.split('/').filter(s => s !== '');
+            const segments = path.split(separator).filter(s => s !== '');
             const filename = segments.length > 0 ? segments[segments.length - 1] : '';
 
             // Проверяем путь по всем правилам исключения
@@ -475,7 +485,23 @@
     }
 
     function isGo() {
+        if (isShowExample) return false
         return !!window['go'];
+    }
+
+    function isOSWindows(){
+        return separator === windowsSeparator
+    }
+
+    function ifWindowsChangeDefaultVariablesForWindowsAfterInit(){
+        if (isOSWindows()) {
+            root = 'C:\\Users\\Public'
+            output = 'C:\\Users\\Public\\code_for_llm.txt'
+            for (let i = 0; i < excluded.length; i++) {
+                excluded[i] = excluded[i].replaceAll(defaultSeparator, separator)
+            }
+            excludeInput.value = excluded.join(", ");
+        }
     }
 
     function GetDirectoryTree(root) {

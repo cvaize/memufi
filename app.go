@@ -100,7 +100,7 @@ func (a *App) Generate(root, output string, include, exclude []string) string {
 
 	var fullDirectoryInclude []string
 	for _, s1 := range include {
-		if strings.HasSuffix(s1, string(filepath.Separator)) {
+		if strings.HasSuffix(s1, a.GetSeparator()) {
 			is := true
 			for _, s2 := range include {
 				if s2 != s1 && strings.HasPrefix(s2, s1) {
@@ -117,7 +117,7 @@ func (a *App) Generate(root, output string, include, exclude []string) string {
 			if inc == path {
 				return true
 			}
-			if isDir && strings.TrimSuffix(inc, string(filepath.Separator)) == path {
+			if isDir && strings.TrimSuffix(inc, a.GetSeparator()) == path {
 				return true
 			}
 		}
@@ -134,8 +134,8 @@ func (a *App) Generate(root, output string, include, exclude []string) string {
 
 		for _, ex := range exclude {
 			// directory exclude
-			if strings.HasSuffix(ex, string(filepath.Separator)) {
-				if isDir && base == strings.TrimSuffix(ex, string(filepath.Separator)) {
+			if strings.HasSuffix(ex, a.GetSeparator()) {
+				if isDir && base == strings.TrimSuffix(ex, a.GetSeparator()) {
 					return true
 				}
 				continue
@@ -213,7 +213,7 @@ func (a *App) Generate(root, output string, include, exclude []string) string {
 		if n != rootNode {
 			s := prefix + connector + n.name
 			if n.isDir {
-				s += "/"
+				s += a.GetSeparator()
 			}
 			treeLines = append(treeLines, s)
 		}
@@ -224,7 +224,7 @@ func (a *App) Generate(root, output string, include, exclude []string) string {
 	}
 
 	treeLines = append(treeLines, "Directory structure:")
-	treeLines = append(treeLines, "└── "+rootNode.name+"/")
+	treeLines = append(treeLines, "└── "+rootNode.name+a.GetSeparator())
 	for i, c := range rootNode.children {
 		renderTree(c, "    ", i == len(rootNode.children)-1)
 	}

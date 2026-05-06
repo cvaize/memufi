@@ -33,6 +33,9 @@ Windows
 ```bash
 docker compose run --rm windows windows -nsis -upx -o memufi-amd64.exe
 ```
+```bash
+wails build -skipbindings -nsis -upx -platform windows/amd64 -o memufi-amd64.exe
+```
 
 The resulting binary will be located in:
 
