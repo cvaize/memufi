@@ -5,13 +5,13 @@
 !include "FileFunc.nsh"
 
 !ifndef INFO_PROJECTNAME
-    !define INFO_PROJECTNAME "memufi"
+    !define INFO_PROJECTNAME "MeMuFi"
 !endif
 !ifndef INFO_COMPANYNAME
-    !define INFO_COMPANYNAME "memufi"
+    !define INFO_COMPANYNAME "MeMuFi"
 !endif
 !ifndef INFO_PRODUCTNAME
-    !define INFO_PRODUCTNAME "memufi"
+    !define INFO_PRODUCTNAME "MeMuFi"
 !endif
 !ifndef INFO_PRODUCTVERSION
     !define INFO_PRODUCTVERSION "1.0.0"

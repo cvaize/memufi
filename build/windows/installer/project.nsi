@@ -97,6 +97,16 @@ Section
     !insertmacro wails.writeUninstaller
 SectionEnd
 
+Section "Folder Context Menu Entry"
+    WriteRegStr HKCR "Directory\Background\shell\${INFO_PROJECTNAME}" "" "Open in ${INFO_PROJECTNAME}"
+    WriteRegStr HKCR "Directory\Background\shell\${INFO_PROJECTNAME}\command" "" '"$INSTDIR\${PRODUCT_EXECUTABLE}"'
+    WriteRegStr HKCR "Directory\Background\shell\${INFO_PROJECTNAME}" "Icon" '"$INSTDIR\${PRODUCT_EXECUTABLE}"'
+
+    WriteRegStr HKCR "Directory\shell\${INFO_PROJECTNAME}" "" "Open in ${INFO_PROJECTNAME}"
+    WriteRegStr HKCR "Directory\shell\${INFO_PROJECTNAME}\command" "" '"$INSTDIR\${PRODUCT_EXECUTABLE}" "%1"'
+    WriteRegStr HKCR "Directory\shell\${INFO_PROJECTNAME}" "Icon" '"$INSTDIR\${PRODUCT_EXECUTABLE}"'
+SectionEnd
+
 Section "uninstall"
     !insertmacro wails.setShellContext
 
@@ -106,6 +116,10 @@ Section "uninstall"
 
     Delete "$SMPROGRAMS\${INFO_PRODUCTNAME}.lnk"
     Delete "$DESKTOP\${INFO_PRODUCTNAME}.lnk"
+
+    DeleteRegKey HKCR "*\shell\${INFO_PROJECTNAME}"
+    DeleteRegKey HKCR "Directory\Background\shell\${INFO_PROJECTNAME}"
+    DeleteRegKey HKCR "Directory\shell\${INFO_PROJECTNAME}"
 
     !insertmacro wails.unassociateFiles
     !insertmacro wails.unassociateCustomProtocols

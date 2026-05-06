@@ -36,6 +36,9 @@ func (a *App) GetSeparator() string {
 
 // GetPwd Возвращает текущую директорию, в которой запущена программа
 func (a *App) GetPwd() string {
+	if len(os.Args) > 1 && os.Args[1] != "" {
+		return os.Args[1]
+	}
 	pwd, err := os.Getwd()
 	if err != nil {
 		log.Errorf("GetPwd() Error: %v", err)
