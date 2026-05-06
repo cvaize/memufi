@@ -1,6 +1,6 @@
 # MeMuFi
 
-**Version:** 0.1.2
+**Version:** 1.0
 
 MeMuFi is a cross-platform GUI application for merging multiple files and directories into a single text file, optimized for use with Large Language Models (LLMs).
 
@@ -29,7 +29,13 @@ The application allows you to select files and folders, apply include and exclud
 
 ## Usage
 
-![App](.github\images\1.jpg)
+### Linux
+
+After installation, to run in the desired directory, run the command `memufi`.
+
+### Windows
+
+![App](.github/images/1.jpg)
 
 ### Output File Structure
 
@@ -62,19 +68,30 @@ The generated file will contain:
 * the directory structure
 * the contents of all included text files
 
-## Build Instructions via Docker the Application
+## Build the Application
 
 Ubuntu 24.04 and later
 ```bash
-docker compose run --rm ubuntu linux -o memufi-ubuntu-amd64.run
+wails build -tags webkit2_41 -o memufi-ubuntu-amd64.run
+make build_deb
+```
+
+Windows
+```bash
+wails build -skipbindings -nsis -upx -platform windows/amd64 -o memufi-amd64.exe
+```
+
+## Build the Application via Docker
+
+Ubuntu 24.04 and later
+```bash
+docker compose run --rm ubuntu linux -tags webkit2_41 -o memufi-ubuntu-amd64.run
+make build_deb
 ```
 
 Windows
 ```bash
 docker compose run --rm windows windows -nsis -upx -o memufi-amd64.exe
-```
-```bash
-wails build -skipbindings -nsis -upx -platform windows/amd64 -o memufi-amd64.exe
 ```
 
 The resulting binary will be located in:

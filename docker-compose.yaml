@@ -2,7 +2,7 @@ services:
   ubuntu:
     build:
       context: ./
-      dockerfile: ./build/wails-cross-compile/ubuntu2504/Dockerfile
+      dockerfile: ./build/wails-cross-compile/ubuntu2404/Dockerfile
     volumes:
       - './:/app'
   windows:

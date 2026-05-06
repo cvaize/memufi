@@ -4,4 +4,5 @@ frontend/dist
 frontend/node_modules
 .idea/
 build/windows/installer/tmp
+build/debian/tmp
 code_for_llm.txt

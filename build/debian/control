@@ -1,0 +1,8 @@
+Package: MeMuFi
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Dmitry Orlov <cvaize@gmail.com>
+Description: MeMuFi is a cross-platform GUI application for merging multiple files and directories into a single text file, optimized for use with Large Language Models (LLMs).
+    The application allows you to select files and folders, apply include and exclude rules, generate a directory tree, and combine file contents into one output file.
