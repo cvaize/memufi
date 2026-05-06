@@ -203,6 +203,8 @@
                     root = _pwd;
                     output = _output;
 
+                    ifWindowsPwdEqualPwdProgramAfterInit()
+
                     rootInput.value = root;
                     outputInput.value = output;
                     treeChildren = [];
@@ -501,6 +503,13 @@
                 excluded[i] = excluded[i].replaceAll(defaultSeparator, separator)
             }
             excludeInput.value = excluded.join(", ");
+        }
+    }
+
+    function ifWindowsPwdEqualPwdProgramAfterInit(){
+        if (root === "C:\\Program Files\\memufi\\memufi\\") {
+            root = 'C:\\Users\\Public'
+            output = 'C:\\Users\\Public\\code_for_llm.txt'
         }
     }
 

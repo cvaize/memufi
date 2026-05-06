@@ -156,7 +156,7 @@ func (a *App) Generate(root, output string, include, exclude []string) string {
 		}
 		defer f.Close()
 
-		buf := make([]byte, 8000)
+		buf := make([]byte, 100000)
 		n, _ := f.Read(buf)
 		return !utf8.Valid(buf[:n])
 	}

@@ -4,3 +4,4 @@ frontend/dist
 frontend/node_modules
 .idea/
 build/windows/installer/tmp
+code_for_llm.txt
