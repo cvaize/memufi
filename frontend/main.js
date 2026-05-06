@@ -407,7 +407,6 @@
 
     function filterPaths(paths, patterns) {
         let safeSeparator = escapeRegExp(separator)
-        console.log(safeSeparator)
         // 1. Предварительно компилируем паттерны в Regex для скорости
         const rules = patterns.map(p => {
             const isDirRule = p.endsWith(separator);

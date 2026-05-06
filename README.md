@@ -22,6 +22,46 @@ The application allows you to select files and folders, apply include and exclud
 * **Wails** — desktop GUI framework and build system
 * **HTML / CSS / JavaScript** — frontend
 
+## OS
+
+* **Linux** - Ubuntu 24.04, Ubuntu 25.04, Ubuntu 26.04
+* **Windows** - Windows 10, Windows 11
+
+## Usage
+
+![App](.github\images\1.jpg)
+
+### Output File Structure
+
+```
+Directory structure:
+└── project/
+    ├── file1.go
+    └── file2.exe
+
+================================================
+FILE: project/file1.go
+================================================
+<file contents>
+
+================================================
+FILE: project/file2.exe
+================================================
+[Binary file]
+```
+
+1. Launch the application
+2. Select the root project directory
+3. Choose files and folders to include
+4. Optionally define exclude rules
+5. Specify the output file path
+6. Click **Generate**
+
+The generated file will contain:
+
+* the directory structure
+* the contents of all included text files
+
 ## Build Instructions via Docker the Application
 
 Ubuntu 24.04 and later
@@ -41,34 +81,6 @@ The resulting binary will be located in:
 
 ```
 build/bin/
-```
-
-## Usage
-
-1. Launch the application
-2. Select the root project directory
-3. Choose files and folders to include
-4. Optionally define exclude rules
-5. Specify the output file path
-6. Click **Generate**
-
-The generated file will contain:
-
-* the directory structure
-* the contents of all included text files
-
-## Output File Structure
-
-```
-Directory structure:
-└── project/
-    ├── file1.go
-    └── file2.md
-
-================================================
-FILE: project/file1.go
-================================================
-<file contents>
 ```
 
 
